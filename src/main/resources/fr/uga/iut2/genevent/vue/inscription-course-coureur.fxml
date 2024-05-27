@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane hbarPolicy="NEVER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="680.0" stylesheets="@style.css">
+         <children>
+            <Label fx:id="titreInscrireCoureur" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="650.0" style="-fx-font-weight: bold;" text="Inscrire à [Nom course]" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="550.0" style="-fx-background-color: #e1e8cc;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="20.0" prefHeight="90.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nom* :" />
+                  <TextField fx:id="nomCoureurTf" onInputMethodTextChanged="#validateRunnerFields" onKeyPressed="#validateRunnerFields" onKeyReleased="#validateRunnerFields" onKeyTyped="#validateRunnerFields" prefHeight="500.0" promptText="ex : Blanchon" styleClass="tf" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Prénom* :" GridPane.rowIndex="1" />
+                  <TextField fx:id="prenomCoureurTf" onInputMethodTextChanged="#validateRunnerFields" onKeyPressed="#validateRunnerFields" onKeyReleased="#validateRunnerFields" onKeyTyped="#validateRunnerFields" promptText="ex : Hervé" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Date de naissance* :" GridPane.rowIndex="2" />
+                  <Label text="Mail :" GridPane.rowIndex="3" />
+                  <TextField fx:id="mailCoureurTf" onInputMethodTextChanged="#validateRunnerFields" onKeyPressed="#validateRunnerFields" onKeyReleased="#validateRunnerFields" onKeyTyped="#validateRunnerFields" promptText="xavier.dupont@gmail.com" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Sexe* :" GridPane.rowIndex="4" />
+                  <HBox fx:id="sexeCoureurRb" alignment="CENTER" onContextMenuRequested="#validateRunnerFields" onInputMethodTextChanged="#validateRunnerFields" onKeyPressed="#validateRunnerFields" onKeyReleased="#validateRunnerFields" onKeyTyped="#validateRunnerFields" onMouseClicked="#validateRunnerFields" onMouseDragged="#validateRunnerFields" onMouseEntered="#validateRunnerFields" onMouseExited="#validateRunnerFields" onMouseMoved="#validateRunnerFields" onMousePressed="#validateRunnerFields" onMouseReleased="#validateRunnerFields" onScroll="#validateRunnerFields" onScrollFinished="#validateRunnerFields" onScrollStarted="#validateRunnerFields" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <RadioButton fx:id="femmeRb" mnemonicParsing="false" onAction="#validateRunnerFields" prefHeight="25.0" prefWidth="90.0" selected="true" styleClass="tf" text="Femme">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="genre" />
+                           </toggleGroup>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="hommeRb" mnemonicParsing="false" onAction="#validateRunnerFields" prefHeight="25.0" prefWidth="90.0" styleClass="tf" text="Homme" toggleGroup="$genre">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <Label maxWidth="200.0" prefHeight="500.0" text="Documents à fournir* : " GridPane.rowIndex="5" />
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="257.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="262.0">
+                                 <children>
+                                    <VBox fx:id="docVB" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="262.0">
+                                       <children>
+                                          <TextField fx:id="docCoureurTf" alignment="TOP_LEFT" prefHeight="0.0" prefWidth="262.0" promptText="https://mondoc.pdf">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <Button mnemonicParsing="false" onAction="#addDocAction" styleClass="button-green" text="+" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </VBox>
+                  <DatePicker fx:id="dateCoureurDp" onAction="#validateRunnerFields" onContextMenuRequested="#validateRunnerFields" onInputMethodTextChanged="#validateRunnerFields" onKeyPressed="#validateRunnerFields" onKeyReleased="#validateRunnerFields" onKeyTyped="#validateRunnerFields" onMouseClicked="#validateRunnerFields" onMouseEntered="#validateRunnerFields" onMouseExited="#validateRunnerFields" onMouseMoved="#validateRunnerFields" onMousePressed="#validateRunnerFields" prefHeight="26.0" prefWidth="230.0" promptText="27/01/2001" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></DatePicker>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="75.0" left="25.0" right="25.0" top="25.0" />
+               </padding>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="640.0">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#annulerActionButton" prefHeight="30.0" styleClass="button-white" text="Annuler">
+                     <HBox.margin>
+                        <Insets right="20.0" top="35.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="inscrireCoureurButton" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#inscrireCoureurAction" prefHeight="30.0" styleClass="button-green" text="Inscrire" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="35.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

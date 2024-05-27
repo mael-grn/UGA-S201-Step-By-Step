@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label style="-fx-font-weight: bold;" text="Créer une course">
+            <font>
+                <Font size="33.0" />
+            </font>
+        </Label>
+        <GridPane style="-fx-background-color: #e1e8cc;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Nom : " />
+                <Label text="Date : " GridPane.rowIndex="1" />
+                <Label text="Lieu (coordonées) : " GridPane.rowIndex="2" />
+                <TextField fx:id="tfNomCourse" onInputMethodTextChanged="#validateTextFieldsCourse" onKeyPressed="#validateTextFieldsCourse" onKeyReleased="#validateTextFieldsCourse" onKeyTyped="#validateTextFieldsCourse" promptText="ex : marathon des alpes" styleClass="tf" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin></TextField>
+                <DatePicker fx:id="dpCourse" onAction="#validateTextFieldsCourse" prefHeight="24.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="tfCooCourse" onInputMethodTextChanged="#validateTextFieldsCourse" onKeyPressed="#validateTextFieldsCourse" onKeyReleased="#validateTextFieldsCourse" onKeyTyped="#validateTextFieldsCourse" prefHeight="26.0" promptText="ex : 41.40338, 2.17403" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="distance :" GridPane.rowIndex="3" />
+                <TextField fx:id="tfDistanceCourse" onInputMethodTextChanged="#validateTextFieldsCourse" onKeyPressed="#validateTextFieldsCourse" onKeyReleased="#validateTextFieldsCourse" onKeyTyped="#validateTextFieldsCourse" promptText="ex : 42,195" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets right="30.0" />
+                    </GridPane.margin></TextField>
+                <Label text="Nombre maximum de coureurs : " GridPane.rowIndex="4" />
+                <TextField fx:id="tfNombreCoureurMax" onInputMethodTextChanged="#validateTextFieldsCourse" onKeyPressed="#validateTextFieldsCourse" onKeyReleased="#validateTextFieldsCourse" onKeyTyped="#validateTextFieldsCourse" promptText="ex : 300" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label layoutX="35.0" layoutY="162.0" text="Prix d'inscription par coureurs :" GridPane.rowIndex="5" />
+                <TextField fx:id="tfPrixParCoureur" layoutX="285.0" layoutY="157.0" onInputMethodTextChanged="#validateTextFieldsCourse" onKeyPressed="#validateTextFieldsCourse" onKeyReleased="#validateTextFieldsCourse" onKeyTyped="#validateTextFieldsCourse" promptText="ex : 15" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets right="30.0" />
+                    </GridPane.margin>
+                </TextField>
+                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="35.0" layoutY="192.0" text="€" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="225.0" />
+                    </GridPane.margin></Label>
+                <Label layoutX="520.0" layoutY="192.0" prefHeight="16.0" prefWidth="32.0" text="km" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets left="225.0" />
+                    </GridPane.margin>
+                </Label>
+            </children>
+            <VBox.margin>
+                <Insets left="25.0" right="25.0" top="25.0" />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+            </padding>
+        </GridPane>
+        <HBox alignment="CENTER">
+            <children>
+                <Button fx:id="BoutonAnnuler" mnemonicParsing="false" onAction="#BoutonAnnuler" prefWidth="100.0" stylesheets="@style.css" text="Annuler">
+                    <HBox.margin>
+                        <Insets right="25.0" />
+                    </HBox.margin>
+                    <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-white" />
+                    </styleClass></Button>
+                <Button fx:id="buttonCreerCourse" mnemonicParsing="false" onAction="#creerCourseActionButton" prefWidth="100.0" text="Créer">
+                    <HBox.margin>
+                        <Insets left="25.0" />
+                    </HBox.margin>
+                    <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                    </styleClass></Button>
+            </children>
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>

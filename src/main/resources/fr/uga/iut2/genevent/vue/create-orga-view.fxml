@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="640.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="Créer un organisateur">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" />
+         </VBox.margin></Label>
+        <GridPane style="-fx-background-color: #e1e8cc;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Nom* :">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></Label>
+                <Label text="Prénom* :" GridPane.rowIndex="1" />
+                <Label text="Email* :" GridPane.rowIndex="2" />
+                <TextField fx:id="newUserForenameTextField" onInputMethodTextChanged="#validateTextFields" onKeyPressed="#validateTextFields" onKeyReleased="#validateTextFields" onKeyTyped="#validateTextFields" promptText="ex : Bleuse" styleClass="tf" GridPane.columnIndex="1" />
+                <TextField fx:id="newUserSurnameTextField" onInputMethodTextChanged="#validateTextFields" onKeyPressed="#validateTextFields" onKeyReleased="#validateTextFields" onKeyTyped="#validateTextFields" promptText="Raphaël" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="newUserEmailTextField" onInputMethodTextChanged="#validateTextFields" onKeyPressed="#validateTextFields" onKeyReleased="#validateTextFields" onKeyTyped="#validateTextFields" promptText="ex : xavier.dupont@gmail.com" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Date de naissance* :" GridPane.rowIndex="3" />
+            <DatePicker fx:id="newUserDateTextField" editable="false" prefHeight="26.0" prefWidth="279.0" promptText="ex : 24/05/1998" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </DatePicker>
+            </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+        </GridPane>
+        <ButtonBar prefHeight="42.0" prefWidth="640.0">
+            <buttons>
+                <Button fx:id="BoutonAnnuler" alignment="CENTER" cancelButton="true" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#BoutonAnnuler" text="Annuler">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-white" />
+               </styleClass></Button>
+                <Button fx:id="buttonCreerConnexion" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#creerOrgaAction" text="Créer" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-green" />
+               </styleClass></Button>
+            </buttons>
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" top="20.0" />
+         </VBox.margin>
+        </ButtonBar>
+    </children>
+</VBox>

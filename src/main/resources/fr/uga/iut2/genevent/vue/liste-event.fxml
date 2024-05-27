@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Vos évènements">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d6d6d6;">
+         <children>
+            <Label style="-fx-background-color: #bdcc94;" text="Sélectionner un évènement">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="75.0" right="75.0" top="25.0" />
+         </VBox.margin>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#exitMenuItemAction" text="Quitter">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="button-white" />
+                  <String fx:value="button" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Ajouter" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-green" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

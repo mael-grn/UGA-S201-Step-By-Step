@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="1000.0">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="835.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#affichePageResume" styleClass="button-navbar" text="Résumé" />
+                  <Button mnemonicParsing="false" onAction="#affichePageCourses" styleClass="button-navbar" text="Courses" />
+                  <Button mnemonicParsing="false" onAction="#affichePageParticipants" styleClass="button-navbar" text="Participants" />
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#affichePageMateriel" styleClass="button-navbar-selected" text="Materiel" />
+                  <Button mnemonicParsing="false" onAction="#affichePageFinance" styleClass="button-navbar" text="Finances" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="70.0" top="20.0" />
+               </HBox.margin>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#retourAccueilAction" prefHeight="26.0" prefWidth="70.0" styleClass="button-white" text="Retour" />
+         </children>
+      </HBox>
+      <Pane prefHeight="48.0" prefWidth="1000.0">
+         <children>
+            <Label fx:id="labelFilArianne" layoutY="16.0" text="Evénement &gt; Matériel">
+               <padding>
+                  <Insets left="20.0" />
+               </padding></Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" minWidth="1000.0" style="-fx-font-weight: bold;" text="Materiel">
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+         <font>
+            <Font size="49.0" />
+         </font></Label>
+      <VBox alignment="TOP_CENTER" prefHeight="666.0" prefWidth="960.0" style="-fx-background-color: #e1e8cc;">
+         <VBox.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </VBox.margin>
+         <children>
+            <Pane prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label style="-fx-font-weight: bold;" text="Renseignement des stocks">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="50.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="900.0" style="-fx-background-color: #c9d1b2;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="170.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label style="-fx-font-weight: bold;" text="Ajouter un materiel">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Button fx:id="buttonAjouterMateriel" disable="true" mnemonicParsing="false" onAction="#ajouterMaterielActionButton" styleClass="button-white-width" text="Ajouter" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin></Button>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Nom :">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfNomMateriel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#verifMat" onKeyPressed="#verifMat" onKeyReleased="#verifMat" onKeyTyped="#verifMat" prefHeight="24.0" prefWidth="161.0" promptText="ex: plot" styleClass="tf" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding></VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Quantité : ">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfQuantiteMateriel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#verifMat" onKeyPressed="#verifMat" onKeyReleased="#verifMat" onKeyTyped="#verifMat" prefWidth="100.0" promptText="ex:20" styleClass="tf" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Prix unitaire :">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="tfPrixMateriel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#verifMat" onKeyPressed="#verifMat" onKeyReleased="#verifMat" onKeyTyped="#verifMat" prefWidth="100.0" promptText="ex:15" styleClass="tf">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="€">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="8.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="75.0" right="75.0" top="20.0" />
+               </padding>
+            </GridPane>
+            <ScrollPane prefHeight="192.0" prefWidth="900.0" style="-fx-background-color: #c9d1b2;">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="883.0" style="-fx-background-color: #c9d1b2;">
+                     <children>
+                        <VBox fx:id="vbListeMateriel" prefHeight="408.0" prefWidth="889.0" spacing="20.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding></VBox>
+                     </children></AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

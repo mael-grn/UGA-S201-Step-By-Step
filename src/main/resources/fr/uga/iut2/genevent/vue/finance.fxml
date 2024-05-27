@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="66.0" prefWidth="1000.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="835.0" spacing="20.0">
+               <children>
+                  <Button fx:id="buttonNavBarResume" mnemonicParsing="false" onAction="#affichePageResume" text="Résumé">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarCourse" mnemonicParsing="false" onAction="#affichePageCourses" text="Courses">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarParticipant" mnemonicParsing="false" onAction="#affichePageParticipants" text="Participants">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarMateriel" mnemonicParsing="false" onAction="#affichePageMateriel" text="Matériel">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarFinance" mnemonicParsing="false" onAction="#affichePageFinance" text="Finances">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar-selected" />
+                     </styleClass></Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="70.0" top="20.0" />
+               </HBox.margin></HBox>
+            <Button fx:id="buttonNavBarQuitter" mnemonicParsing="false" onAction="#retourAccueilAction" prefHeight="26.0" prefWidth="70.0" text="Retour">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-white" />
+               </styleClass></Button>
+         </children></HBox>
+      <Pane prefHeight="48.0" prefWidth="1000.0">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <Label fx:id="labelFilArianne" text="Label">
+               <padding>
+                  <Insets left="20.0" />
+               </padding></Label>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="1000.0" text="Finances" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font></Label>
+      <ScrollPane prefHeight="512.0" prefWidth="1000.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1450.0" prefWidth="981.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="28.0" prefWidth="985.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <Label text="Solde actuel : ">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font></Label>
+                        <Label fx:id="lSolde" text="0.0 €">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="vbBudget" prefHeight="1367.0" prefWidth="900.0" style="-fx-background-color: #e1e8cc;" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="75.0">
+                     <children>
+                        <Label fx:id="lBudgetFinance" text="Budget Previsionnel">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font></Label>
+                        <Slider fx:id="sBalance" disable="true">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin></Slider>
+                        <Label fx:id="lMessageFinance" text="Vous n'avez pas encore défini de budget prévisionnel">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #c9d1b2;">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Votre Budget : ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <TextField fx:id="tfBudget" promptText="ex : 500" styleClass="tf">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="5.0" />
+                                 </HBox.margin></TextField>
+                              <Label text="€">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="bBudget" mnemonicParsing="false" onAction="#onActionbBudget" prefWidth="100.0" text="Modifier">
+                                 <styleClass>
+                                    <String fx:value="button" />
+                                    <String fx:value="button-green" />
+                                 </styleClass>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="100.0" right="100.0" top="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <Label style="-fx-font-weight: bold;" text="Revenus">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin></Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="799.0">
+                           <children>
+                              <Label text="Revenus totaux : ">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font></Label>
+                              <Label fx:id="lRevenuTot" text="0.0 €">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font></Label>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <GridPane prefHeight="239.0" prefWidth="699.0" style="-fx-background-color: #c9d1b2;">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Ajouter un revenu" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Label>
+                              <Label text="Motif :" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin></Label>
+                              <Label text="Montant :" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin></Label>
+                              <Label text="Date :" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin></Label>
+                              <Button fx:id="bAjouterRevenu" mnemonicParsing="false" onAction="#onActionBAjouterRevenu" text="Ajouter" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <styleClass>
+                                    <String fx:value="button" />
+                                    <String fx:value="button-green" />
+                                 </styleClass></Button>
+                              <TextField fx:id="tfMotifRevenu" promptText="ex : sponsors" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="tfMontantRevenu" promptText="ex : 200" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="dpDateRevenu" prefHeight="26.0" prefWidth="329.0" promptText="ex : 24/06/2023" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="25.0" left="100.0" right="100.0" top="25.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </GridPane>
+                        <Label style="-fx-font-weight: bold;" text="Derniers revenus">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" />
+                           </VBox.margin></Label>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="782.0">
+                                 <children>
+                                    <VBox fx:id="vbRevenu" prefHeight="280.0" prefWidth="781.0">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER" spacing="230.0" style="-fx-background-color: #dedede;">
+                                             <children>
+                                                <Label text="Motif">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font></Label>
+                                                <Label text="Montant">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font></Label>
+                                                <Label text="Date">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font></Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Label text="Dépenses">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin></Label>
+                        <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Dépenses totales :">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font></Label>
+                              <Label fx:id="lDepensesTot" text="0.0 €">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <GridPane layoutX="10.0" layoutY="171.0" prefHeight="239.0" style="-fx-background-color: #c9d1b2;">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Motif :" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin></Label>
+                              <Label text="Monant :" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin></Label>
+                              <Label text="Date :" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin></Label>
+                              <Button fx:id="bAjouterDepense" mnemonicParsing="false" onAction="#onActionAjouterDepense" text="Ajouter" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <styleClass>
+                                    <String fx:value="button" />
+                                    <String fx:value="button-green" />
+                                 </styleClass></Button>
+                              <TextField fx:id="tfMotifDepense" promptText="ex : boissons" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="tfMontantDepense" promptText="ex : 150" styleClass="tf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="dpDateDepense" prefHeight="26.0" prefWidth="283.0" promptText="ex : 23/06/2023" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label style="-fx-font-weight: bold;" text="Ajouter une dépense" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="25.0" left="100.0" right="100.0" top="25.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </GridPane>
+                        <Label text="Dernières dépenses">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font></Label>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="782.0">
+                                 <children>
+                                    <VBox fx:id="vbDepense" prefHeight="366.0" prefWidth="783.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefWidth="200.0" spacing="230.0" style="-fx-background-color: #dedede;">
+                                             <children>
+                                                <Label style="-fx-font-weight: bold;" text="Motif">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font></Label>
+                                                <Label text="Prix">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font></Label>
+                                                <Label text="Date">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font></Label>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                     </padding></VBox>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</VBox>

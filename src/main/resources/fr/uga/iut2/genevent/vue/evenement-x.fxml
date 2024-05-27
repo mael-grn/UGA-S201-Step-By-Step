@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="pagePrincipale" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="66.0" prefWidth="1000.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="835.0" spacing="20.0">
+               <children>
+                  <Button fx:id="buttonNavBarResume" defaultButton="true" mnemonicParsing="false" onAction="#affichePageResume" text="Résumé">
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar-selected" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonNavBarCourse" mnemonicParsing="false" onAction="#affichePageCourses" text="Courses">
+                     <styleClass>
+                        <String fx:value="button-navbar" />
+                        <String fx:value="button" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarParticipant" mnemonicParsing="false" onAction="#affichePageParticipants" text="Participants">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarMateriel" mnemonicParsing="false" onAction="#affichePageMateriel" text="Matériel">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarFinance" mnemonicParsing="false" onAction="#affichePageFinance" text="Finances">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="70.0" top="20.0" />
+               </HBox.margin>
+            </HBox>
+            <Button fx:id="buttonNavBarQuitter" mnemonicParsing="false" onAction="#retourAccueilAction" prefHeight="26.0" prefWidth="70.0" text="Retour">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-white" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Pane prefHeight="48.0" prefWidth="1000.0">
+         <children>
+            <Label fx:id="labelFilArianne" alignment="TOP_LEFT" layoutY="16.0" text="Vos évènements &gt; Évènement1 &gt; Résumé">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Pane>
+      <Label fx:id="labelBigTitle" alignment="CENTER" contentDisplay="CENTER" minWidth="1000.0" prefWidth="338.0" style="-fx-font-weight: bold;" text="Évènement" textAlignment="CENTER">
+         <font>
+            <Font size="50.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin></Label>
+      <ScrollPane prefHeight="695.0" prefWidth="1000.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1350.0" prefWidth="980.0">
+               <children>
+                  <VBox alignment="CENTER" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1350.0" prefWidth="1000.0">
+                     <children>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e1e8cc;">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="900.0">
+                                 <children>
+                                    <Label style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Récapitulatif">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="900.0">
+                                       <children>
+                                          <VBox layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="450.0">
+                                             <children>
+                                                <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Informations de l'évènement">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <GridPane prefHeight="200.0" prefWidth="200.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label style="-fx-font-weight: bold;" text="Nom : " />
+                                                      <Label style="-fx-font-weight: bold;" text="Date de début : " GridPane.rowIndex="1" />
+                                                      <Label style="-fx-font-weight: bold;" text="Date de fin :" GridPane.rowIndex="2" />
+                                                      <Button fx:id="modif1Button" mnemonicParsing="false" onAction="#modif1ButtonAction" text="Modifier" textFill="WHITE" GridPane.columnIndex="2">
+                                                         <styleClass>
+                                                            <String fx:value="button" />
+                                                            <String fx:value="button-green" />
+                                                         </styleClass></Button>
+                                                      <Button fx:id="modif2Button" mnemonicParsing="false" onAction="#modif2ButtonAction" text="Modifier" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <styleClass>
+                                                            <String fx:value="button" />
+                                                            <String fx:value="button-green" />
+                                                         </styleClass></Button>
+                                                      <Button fx:id="modif3Button" mnemonicParsing="false" onAction="#modif3ButtonAction" text="Modifier" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <styleClass>
+                                                            <String fx:value="button" />
+                                                            <String fx:value="button-green" />
+                                                         </styleClass></Button>
+                                                      <TextField fx:id="tfNomEvent" disable="true" onInputMethodTextChanged="#validateNameEvent" onKeyPressed="#validateNameEvent" onKeyReleased="#validateNameEvent" onKeyTyped="#validateNameEvent" styleClass="tf" GridPane.columnIndex="1" />
+                                                      <DatePicker fx:id="dpDateFinEvent" disable="true" editable="false" onAction="#validateDateFinEvent" onInputMethodTextChanged="#validateDateFinEvent" onKeyPressed="#validateDateFinEvent" onKeyReleased="#validateDateFinEvent" onKeyTyped="#validateDateFinEvent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <DatePicker fx:id="dpDateDebEvent" disable="true" editable="false" layoutX="164.0" layoutY="121.0" onAction="#validateDateDebEvent" onInputMethodTextChanged="#validateDateDebEvent" onKeyPressed="#validateDateDebEvent" onKeyReleased="#validateDateDebEvent" onKeyTyped="#validateDateDebEvent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="300.0" prefWidth="450.0">
+                                             <children>
+                                                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Participants">
+                                                   <padding>
+                                                      <Insets bottom="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <GridPane>
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label style="-fx-font-weight: bold;" text="Nombre de coureurs inscrits : " />
+                                                      <Label style="-fx-font-weight: bold;" text="Nombre de bénévoles : " GridPane.rowIndex="1" />
+                                                      <Label fx:id="labelNombreCoureur" text="Label" GridPane.columnIndex="1" />
+                                                      <Label fx:id="labelNombreBenevole" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="900.0">
+                                       <children>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="450.0">
+                                             <children>
+                                                <Label fx:id="lBudgetResume" style="-fx-font-weight: bold;" text="Budget provisionnel">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Slider fx:id="sliderBudget" minWidth="-Infinity" prefWidth="300.0" stylesheets="@style.css">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </padding>
+                                                </Slider>
+                                                <Label fx:id="lMessageBudget" prefHeight="90.0" prefWidth="440.0" text="Budget prévisionnel non défini, voir l'onglet Finance" wrapText="true">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="-25.0" />
+                                                   </VBox.margin></Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="450.0">
+                                             <children>
+                                                <Label style="-fx-font-weight: bold;" text="Dernier materiel ajouté">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <TableView fx:id="materielTableView" prefHeight="200.0" prefWidth="200.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="columnNom" minWidth="200.0" prefWidth="75.0" sortType="DESCENDING" text="Nom" />
+                                                    <TableColumn fx:id="columnQuantite" minWidth="200.0" prefWidth="75.0" sortType="DESCENDING" text="Quantité" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="900.0" style="-fx-background-color: #e1e8cc;">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+                                 <children>
+                                    <Label style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Parking">
+                                       <padding>
+                                          <Insets bottom="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TableView fx:id="tableView" prefHeight="500.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="colonneNom" prefWidth="300.0" text="Nom" />
+                                        <TableColumn fx:id="colonneAdresse" prefWidth="300.0" text="Lieu" />
+                                          <TableColumn fx:id="colonnePlaces" prefWidth="260.0" text="Places" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                    <Button fx:id="butonAjouterParking" mnemonicParsing="false" onAction="#butonAjouterParkingEvenement" text="Ajouter">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="button" />
+                                          <String fx:value="button-green" />
+                                       </styleClass></Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</VBox>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="labelNomCourseDetaille" text="Label">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <GridPane prefHeight="326.0" prefWidth="560.0" style="-fx-background-color: #e1e8cc;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Nom :" />
+            <Label layoutX="10.0" layoutY="17.0" text="Prix d'inscription par coureurs :" GridPane.rowIndex="5" />
+            <Label layoutX="10.0" layoutY="17.0" text="Nombre maximum de coureurs :" GridPane.rowIndex="4" />
+            <Label layoutX="10.0" layoutY="17.0" text="Distance :" GridPane.rowIndex="3" />
+            <Label layoutX="10.0" layoutY="17.0" text="Lieu (coordonées) :" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="17.0" text="Date :" GridPane.rowIndex="1" />
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="tfNomCourseDetaille" onInputMethodTextChanged="#validateTextFieldsNomCourseDetaille" onKeyPressed="#validateTextFieldsNomCourseDetaille" onKeyReleased="#validateTextFieldsNomCourseDetaille" onKeyTyped="#validateTextFieldsNomCourseDetaille" styleClass="tf">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonNomCourseDetaille" mnemonicParsing="false" onAction="#modifierNomCourse" text="Modifier">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <DatePicker fx:id="dpDateCourseDetaille" onAction="#validateTextFieldsDateCourseDetaille" onInputMethodTextChanged="#validateTextFieldsDateCourseDetaille" onKeyPressed="#validateTextFieldsDateCourseDetaille" onKeyReleased="#validateTextFieldsDateCourseDetaille" onKeyTyped="#validateTextFieldsDateCourseDetaille" prefHeight="24.0" prefWidth="174.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Button fx:id="buttonDateCourseDetaille" mnemonicParsing="false" onAction="#modifierDateCourse" text="Modifier">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="tfLieuCourseDetaille" onInputMethodTextChanged="#validateTextFieldsLieuCourseDetaille" onKeyPressed="#validateTextFieldsLieuCourseDetaille" onKeyReleased="#validateTextFieldsLieuCourseDetaille" onKeyTyped="#validateTextFieldsLieuCourseDetaille" styleClass="tf">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonLieuCourseDetaille" mnemonicParsing="false" onAction="#modifierLieuCourse" text="Modifier">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <TextField fx:id="tfDistanceCourseDetaille" onInputMethodTextChanged="#validateTextFieldsDistanceCourseDetaille" onKeyPressed="#validateTextFieldsDistanceCourseDetaille" onKeyReleased="#validateTextFieldsDistanceCourseDetaille" onKeyTyped="#validateTextFieldsDistanceCourseDetaille" styleClass="tf">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonDistanceCourseDetaille" mnemonicParsing="false" onAction="#modifierDistanceCourse" text="Modifier">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <TextField fx:id="tfNombreCoureurMaxDetaille" onInputMethodTextChanged="#validateTextFieldsNombreCoureurCourseDetaille" onKeyPressed="#validateTextFieldsNombreCoureurCourseDetaille" onKeyReleased="#validateTextFieldsNombreCoureurCourseDetaille" onKeyTyped="#validateTextFieldsNombreCoureurCourseDetaille" styleClass="tf">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonNombreCoureurCourseDetaille" mnemonicParsing="false" onAction="#modifierNombreCoureurCourse" text="Modifier">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <TextField fx:id="tfPrixCourseDetaille" onInputMethodTextChanged="#validateTextFieldsPrixCourseDetaille" onKeyPressed="#validateTextFieldsPrixCourseDetaille" onKeyReleased="#validateTextFieldsPrixCourseDetaille" onKeyTyped="#validateTextFieldsPrixCourseDetaille" styleClass="tf">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="buttonPrixCourseDetaille" mnemonicParsing="false" onAction="#modifierPrixCourse" text="Modifier">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-green" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" top="10.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </GridPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#fermerCourseActionButton" styleClass="button-white" text="Fermer">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#supprimerCourseActionButton" styleClass="button-green" text="Supprimer la course">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

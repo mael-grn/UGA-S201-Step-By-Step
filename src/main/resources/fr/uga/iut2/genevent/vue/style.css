@@ -1,0 +1,104 @@
+.button-green {
+    -fx-background-color:  #bdcc94;
+    -fx-background-radius: 20px;
+    -fx-font-fill:white;
+}
+.button-white {
+    -fx-background-color:  white;
+
+    -fx-border-color: #bdcc94;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.button-white-width {
+    -fx-background-color:  white;
+
+    -fx-border-color: #bdcc94;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-pref-width: 100px;
+}
+
+.tf-with-error {
+    -fx-background-color:  white;
+    -fx-border-color: #ff553b;
+    -fx-border-width: 2px;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+
+.button:hover {
+    -fx-background-color: #a3a3a3;
+}
+.button-navbar-selected {
+
+    -fx-background-color:  transparent;
+    -fx-border-color: #bdcc94;
+    -fx-border-width: 0 0 2 0;
+}
+.button-navbar {
+
+    -fx-background-color:  transparent;
+    -fx-border-color: #bdcc94;
+    -fx-border-width: 0 0 0 0;
+}
+
+
+.tf {
+    -fx-background-color:  white;
+    -fx-border-color: #bdcc94;
+    -fx-border-width: 1px;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+.tf:focused {
+    -fx-border-color: black;
+}
+.button-liste-course {
+    -fx-background-color: transparent;
+    -fx-min-width: 902px;
+    -fx-max-width: 902px;
+    -fx-font-size: 20px;
+}
+
+.button-liste-course2 {
+    -fx-background-color: transparent;
+    -fx-min-width: 550px;
+    -fx-max-width: 550px;
+    -fx-font-size: 20px;
+}
+
+
+.button-liste-course:hover {
+    -fx-background-color: #a3a3a3;
+}
+
+.button-liste-course:hover2 {
+    -fx-background-color: #a3a3a3;
+}
+
+.button-liste-coureur {
+    -fx-background-color: transparent;
+    -fx-min-width: 800px;
+    -fx-max-width: 800px;
+    -fx-font-size: 16px;
+}
+.button-liste-coureur:hover {
+    -fx-background-color: #a3a3a3;
+}
+
+.button-selected-course{
+    -fx-background-color:  #bdcc94;
+}
+
+.buttonSuppMat {
+-fx-background-color:  white;
+
+    -fx-border-color: #bdcc94;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-margin-left: 20px;
+}

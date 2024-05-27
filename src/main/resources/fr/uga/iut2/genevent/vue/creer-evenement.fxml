@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="640.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Créer un évènement">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <GridPane minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" style="-fx-background-color: #e1e8cc;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nom * :" />
+            <Label alignment="CENTER" text="Date de début * :" GridPane.rowIndex="1" />
+            <Label text="Date de fin * :" GridPane.rowIndex="2" />
+            <TextField fx:id="newEventNameTextField" onInputMethodTextChanged="#validateTextFieldsEvent" onKeyPressed="#validateTextFieldsEvent" onKeyReleased="#validateTextFieldsEvent" onKeyTyped="#validateTextFieldsEvent" promptText="ex : Marathon de Grenoble" GridPane.columnIndex="1">
+               <styleClass>
+                  <String fx:value="tf" />
+                  <String fx:value="tf-with-error" />
+               </styleClass>
+            </TextField>
+            <DatePicker fx:id="newStartDatePicker" editable="false" onAction="#validateTextFieldsEvent" onInputMethodTextChanged="#validateTextFieldsEvent" onKeyPressed="#validateTextFieldsEvent" onKeyReleased="#validateTextFieldsEvent" onKeyTyped="#validateTextFieldsEvent" prefHeight="25.0" prefWidth="281.0" promptText="ex : 15/07/2023" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="newEndDatePicker" editable="false" onAction="#validateTextFieldsEvent" onInputMethodTextChanged="#validateTextFieldsEvent" onKeyPressed="#validateTextFieldsEvent" onKeyReleased="#validateTextFieldsEvent" onKeyTyped="#validateTextFieldsEvent" prefHeight="25.0" prefWidth="281.0" promptText="ex : 18/07/2023" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </GridPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+         <children>
+            <Button fx:id="BoutonAnnuler" mnemonicParsing="false" onAction="#BoutonAnnuler" prefHeight="20.0" prefWidth="100.0" text="Annuler">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-white" />
+               </styleClass></Button>
+            <Button fx:id="buttonCreerConnexion" disable="true" mnemonicParsing="false" onAction="#creerEventAction" prefHeight="20.0" prefWidth="100.0" styleClass="button-green" text="Créer" textFill="WHITE" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

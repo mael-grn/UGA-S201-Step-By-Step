@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="66.0" prefWidth="1000.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="835.0" spacing="20.0">
+               <children>
+                  <Button fx:id="buttonNavBarResume" mnemonicParsing="false" onAction="#affichePageResume" text="Résumé">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarCourse" mnemonicParsing="false" onAction="#affichePageCourses" text="Courses">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button mnemonicParsing="false" text="Participants">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar-selected" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarMateriel" mnemonicParsing="false" onAction="#affichePageMateriel" text="Matériel">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+                  <Button fx:id="buttonNavBarFinance" mnemonicParsing="false" onAction="#affichePageFinance" text="Finances">
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button-navbar" />
+                     </styleClass></Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="70.0" top="20.0" />
+               </HBox.margin>
+            </HBox>
+            <Button fx:id="buttonNavBarQuitter" mnemonicParsing="false" onAction="#retourAccueilAction" prefHeight="26.0" prefWidth="70.0" text="Retour">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-white" />
+               </styleClass></Button>
+         </children>
+      </HBox>
+      <Pane prefHeight="48.0" prefWidth="1000.0">
+         <children>
+            <Label fx:id="labelFilArianne" text="Label">
+               <padding>
+                  <Insets left="20.0" top="15.0" />
+               </padding></Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Pane>
+      <Label text="Participants">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font></Label>
+      <ScrollPane prefHeight="512.0" prefWidth="1000.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1144.0" prefWidth="984.0">
+               <children>
+                  <VBox prefHeight="1048.0" prefWidth="900.0" style="-fx-background-color: #e1e8cc;" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                     <children>
+                        <VBox prefHeight="302.0" prefWidth="799.0" style="-fx-background-color: #c9d1b2;">
+                           <children>
+                              <Label text="Coureurs">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin></Label>
+                              <ScrollPane prefHeight="200.0" prefWidth="799.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="781.0">
+                                       <children>
+                                          <VBox fx:id="vboxListeCoureurs" prefHeight="363.0" prefWidth="781.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                              <Button fx:id="buttonAjouterCoureur" mnemonicParsing="false" onAction="#ajouterCoureurActionButton" prefHeight="26.0" prefWidth="800.0" text="Ajouter">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <styleClass>
+                                    <String fx:value="button-white" />
+                                    <String fx:value="button" />
+                                 </styleClass></Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="295.0" prefWidth="799.0" style="-fx-background-color: #c9d1b2;">
+                           <children>
+                              <Label text="Bénévoles">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin></Label>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="782.0">
+                                       <children>
+                                          <VBox fx:id="vboxListeBenevoles" prefHeight="360.0" prefWidth="780.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                              <Button fx:id="boutonajouterBenevole" mnemonicParsing="false" onAction="#ajouterBenevActionButton" prefHeight="26.0" prefWidth="800.0" text="Ajouter">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <styleClass>
+                                    <String fx:value="button-white" />
+                                    <String fx:value="button" />
+                                 </styleClass></Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="296.0" prefWidth="799.0" style="-fx-background-color: #c9d1b2;">
+                           <children>
+                              <Label text="Chronométreurs">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin></Label>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="781.0">
+                                       <children>
+                                          <VBox fx:id="vboxListeChrono" prefHeight="321.0" prefWidth="781.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                              <Button fx:id="boutonajouterChronometeur" mnemonicParsing="false" onAction="#ajouterChronoActionButton" prefHeight="26.0" prefWidth="804.0" text="Ajouter">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <styleClass>
+                                    <String fx:value="button-white" />
+                                    <String fx:value="button" />
+                                 </styleClass></Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</VBox>

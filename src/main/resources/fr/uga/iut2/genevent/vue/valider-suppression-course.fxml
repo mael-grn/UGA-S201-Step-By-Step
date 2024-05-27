@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="labelConfirmerSuppCourse" alignment="CENTER" contentDisplay="CENTER" minHeight="150.0" prefWidth="500.0" text="Label" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="25.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#closeWindow" text="Annuler">
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-white" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ValidersuppCourseActionButton" text="Supprimer">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-green" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
